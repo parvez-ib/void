@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "api-server"
+version = "0.1.0"
+description = ""
+authors = []
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "3.9.16"
+idna = "2.8"
