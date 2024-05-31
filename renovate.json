@@ -27,5 +27,5 @@
     "minor": true,
     "prConcurrentLimit": 5,
     "branchConcurrentLimit": 5,
-    "prHourlyLimit": 10,
+    "prHourlyLimit": 10
 }
