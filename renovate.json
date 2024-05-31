@@ -25,5 +25,6 @@
     "gitAuthor": "Renovate Bot <renovate@ib.com>",
     "major": false,
     "minor": true,
-    "prConcurrentLimit": 5
+    "prConcurrentLimit": 5,
+    "branchConcurrentLimit": 5
 }
