@@ -1,18 +1,62 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "repositories": [
-    "parvez-ib/void"
-  ],
-  "packageRules": [
-    {
-      "matchPackageNames": ["*"],
-      "packagePatterns": ["^osv:"],
-      "vulnerabilityAlerts": true
-    }
-  ],
-  "force": {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "repositories": [
+        "parvez-ib/void"
+    ],
+    "additionalBranchPrefix": "{{parentDir}}-",
+    "labels": [
+        "renovate-bot-test-run",
+        "skip-backport-check",
+        "no-backport",
+        "Security"
+    ],
+    "platform": "github",
+    "hashedBranchLength": 20,
+    "github-actions": {
+        "enabled": false
+    },
+    "docker": {
+        "enabled": false
+    },
+    "extends": [
+        ":enableVulnerabilityAlerts"
+    ],
+    "vulnerabilityAlerts": {
+        "enabled": "true"
+    },
+    "osvVulnerabilityAlerts": true,
+    "dryRun": false,
+    "assigneesFromCodeOwners": true,
+    "ignorePaths": [
+        "**/tools/**",
+        "**/testdata/**",
+        "**/experimental/**"
+    ],
+    "includePaths": [
+        "*"
+    ],
+    "baseBranches": [
+        "main"
+    ],
+    "commitMessagePrefix": "[RENO-123] ",
+    "prFooter": "\\n\\n## Test Plan\\n N/A",
+    "packageRules": [
+        {
+            "matchPackageNames": ["*"],
+            "packagePatterns": ["^osv:"],
+            "vulnerabilityAlerts": true
+        }
+    ],
+    "ignorePresets": [
+        "all"
+    ],
     "constraints": {
-        "python": "3.9",
-    }
-  }
+        "go": "1.18",
+        "python": "3.9"
+    },
+    "postUpdateOptions": [
+        "gomodMassage"
+    ],
+    "gitAuthor": "Renovate Bot <renovate@ib.com>",
+    "forkProcessing": "enabled"
 }
