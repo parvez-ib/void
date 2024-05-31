@@ -7,5 +7,4 @@ readme = "README.md"
 packages = []
 
 [tool.poetry.dependencies]
-python = "3.9.16"
 idna = "2.8"

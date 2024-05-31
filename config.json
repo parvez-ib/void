@@ -1,0 +1,17 @@
+{
+  "repositories": [
+    "parvez-ib/void"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["*"],
+      "packagePatterns": ["^osv:"],
+      "vulnerabilityAlerts": true
+    }
+  ],
+  "force": {
+    "constraints": {
+        "python": "3.9",
+    }
+  },
+}
