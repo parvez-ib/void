@@ -1,31 +1,57 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "repositories": [
-        "parvez-ib/void"
-    ],
-    "platform": "github",
-    "extends": [
-        ":enableVulnerabilityAlerts"
-    ],
-    "vulnerabilityAlerts": {
-        "enabled": "true"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "repositories": [
+    "parvez-ib/instabase"
+  ],
+  "additionalBranchPrefix": "{{parentDir}}-",
+  "labels": [
+    "renovate-bot-test-run",
+    "skip-backport-check",
+    "no-backport",
+    "Security"
+  ],
+  "github-actions": {
+    "enabled": false
+  },
+  "docker": {
+    "enabled": false
+  },
+  "platform": "github",
+  "extends": [
+    ":enableVulnerabilityAlerts"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "osvVulnerabilityAlerts": true,
+  "packageRules": [
+    {
+      "matchPackageNames": ["setuptools", "transformers"],
+      "enabled": false
     },
-    "osvVulnerabilityAlerts": true,
-    "dryRun": false,
-    "packageRules": [
-        {
-            "matchPackageNames": ["*"],
-            "packagePatterns": ["^osv:"],
-            "vulnerabilityAlerts": true
-        }
-    ],
-    "constraints": {
-        "python": "3.9"
-    },
-    "gitAuthor": "Renovate Bot <renovate@ib.com>",
-    "major": false,
-    "minor": true,
-    "prConcurrentLimit": 5,
-    "branchConcurrentLimit": 5,
-    "prHourlyLimit": 10
+    {
+      "matchUpdateTypes": ["patch"]
+    }
+  ],
+  "constraints": {
+    "python": "3.9.17",
+    "go": "1.18"
+  },
+  "gitAuthor": "Renovate Bot <renovate@instabase.com>",
+  "prConcurrentLimit": 5,
+  "branchConcurrentLimit": 5,
+  "prHourlyLimit": 10,
+  "includePaths": [
+    "**/webserver/apps-server/**"
+  ],
+  "ignorePaths": [
+    "**/tools/**",
+    "**/testdata/**",
+    "**/experimental/**"
+  ],
+  "commitMessagePrefix": "[RENO-111] ",
+  "prFooter": "\n\n## Test Plan\n N/A",
+  "poetry": {
+    "enabled": true
+  },
 }
