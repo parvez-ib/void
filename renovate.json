@@ -42,7 +42,7 @@
   "branchConcurrentLimit": 5,
   "prHourlyLimit": 10,
   "includePaths": [
-    "**/webserver/apps-server/**"
+    "**/apps-server/**"
   ],
   "ignorePaths": [
     "**/tools/**",
